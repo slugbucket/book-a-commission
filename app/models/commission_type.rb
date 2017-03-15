@@ -1,0 +1,2 @@
+class CommissionType < ApplicationRecord
+end

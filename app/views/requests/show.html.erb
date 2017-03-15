@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @request.fullname %>
+</p>
+
+<p>
+  <strong>Contact address:</strong>
+  <%= @request.contact_address %>
+</p>
+
+<p>
+  <strong>Commission type:</strong>
+  <%= @request.commission_type_id %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @request.due_date %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @request.comments %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

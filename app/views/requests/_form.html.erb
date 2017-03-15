@@ -1,0 +1,42 @@
+<%= form_for(request) do |f| %>
+  <% if request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fullname %>
+    <%= f.text_field :fullname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact_address %>
+    <%= f.text_field :contact_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :commission_type_id %>
+    <%= f.collection_select :commission_type_id, CommissionType.order(:name), :id, :name, {:selected => @request.commission_type_id,:prompt => 'Please select'} %><br /
+  </div>
+
+  <div class="field">
+    <%= f.label :due_date %>
+    <%= f.date_select :due_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comments %>
+    <%= f.text_area :comments %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

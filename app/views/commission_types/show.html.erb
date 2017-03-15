@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @commission_type.name %>
+</p>
+
+<p>
+  <strong>Days to complete:</strong>
+  <%= @commission_type.days_to_complete %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @commission_type.active %>
+</p>
+
+<%= link_to 'Edit', edit_commission_type_path(@commission_type) %> |
+<%= link_to 'Back', commission_types_path %>
