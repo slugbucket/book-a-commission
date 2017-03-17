@@ -15,3 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore datbase configuration after initial setup
+/config/database.yml
+/config/secrets.yml
