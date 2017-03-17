@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :commission_type_id %>
-    <%= f.collection_select :commission_type_id, CommissionType.order(:name), :id, :name, {:selected => @request.commission_type_id,:prompt => 'Please select'} %><br /
+    <%= f.collection_select :commission_type_id, CommissionType.order(:name), :id, :name_how_long, {:selected => @request.commission_type_id,:prompt => 'Please select'} %><br /
   </div>
 
   <div class="field">
