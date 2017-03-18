@@ -87,3 +87,7 @@ div {
 label {
   display: block;
 }
+
+input.required_field, select,required_field {
+  border-color: #ff0000
+}

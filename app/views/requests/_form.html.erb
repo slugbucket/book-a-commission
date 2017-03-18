@@ -12,29 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :fullname %>
-    <%= f.text_field :fullname %>
+    <%= f.label :fullname, "Full name*" %>
+    <%= f.text_field :fullname, :class => "required_field" %>
   </div>
 
   <div class="field">
-    <%= f.label :contact_address %>
-    <%= f.text_field :contact_address %>
+    <%= f.label :contact_address, "Email adddress*" %>
+    <%= f.text_field :contact_address, :class => "required_field" %>
   </div>
 
   <div class="field">
-    <%= f.label :commission_type_id %>
-    <%= f.collection_select :commission_type_id, CommissionType.order(:name), :id, :name_how_long, {:selected => @request.commission_type_id,:prompt => 'Please select'} %><br /
+    <%= f.label :commission_type_id, "Commission type*" %>
+    <%= f.collection_select :commission_type_id, CommissionType.order(:name), :id, :name_how_long, {:selected => @request.commission_type_id,:prompt => 'Please select', :class => "required_field"} %><br /
   </div>
 
   <div class="field">
-    <%= f.label :due_date %>
+    <%= f.label :due_date, "Due date (click to display calendar)" %>
     <!-- %= f.date_select :due_date % -->
-    <%= f.text_field :due_date, :id => "datepicker" %>
+    <%= f.text_field :due_date, :id => "datepicker", :class => "required_field" %>
   </div>
 
   <div class="field">
     <%= f.label :comments %>
-    <%= f.text_area :comments %>
+    <%= f.text_area :comments, :cols => 40, :rows => 8 %>
   </div>
 
   <div class="actions">
