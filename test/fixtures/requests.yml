@@ -1,15 +1,42 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  fullname: MyString
-  contact_address: 
+  id: 1
+  fullname: "Penny Portrait"
+  contact_address: "penny@do-me-a-painting.net"
   commission_type_id: 1
-  due_date: 2017-03-15 19:44:09
-  comments: MyText
+  due_date: "2017-07-14 19:34:45"
+  comments: "A picture in your finest style please"
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
 
-two:
-  fullname: MyString
-  contact_address: 
-  commission_type_id: 1
-  due_date: 2017-03-15 19:44:09
-  comments: MyText
+awkward:
+  id: 2
+  fullname: Andy Awkward
+  contact_address: 25@Down-the-lane.com
+  commission_type_id: 2
+  due_date: "2017-06-14 19:34:45"
+  comments: "More text"
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+
+pastelboy:
+  id: 3
+  fullname: Mike Morton
+  contact_address: mike@morton.me
+  commission_type_id: 3
+  due_date: "2017-08-14 19:34:45"
+  comments: "Quick turnaround if you don't mind"
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+
+muttpic:
+  id: 4
+  fullname: "Woofy Donaldson"
+  contact_address: "barker@mutt-pics.com"
+  commission_type_id: 4
+  due_date: "2017-09-14 19:34:45"
+  comments: "This one is for the upcoming exhibition"
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+  

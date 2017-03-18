@@ -1,11 +1,40 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  days_to_complete: 1
-  active: false
+oil:
+  id: 1
+  name: "Oil"
+  days_to_complete: 40
+  active: true
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
 
-two:
-  name: MyString
-  days_to_complete: 1
+pastel:
+  id: 2
+  name: Pastel
+  days_to_complete: 5
+  active: true
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+
+watercolor:
+  id: 3
+  name: Watercolour
+  days_to_complete: 5
+  active: true
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+
+gouache:
+  id: 4
+  name: Gouache
+  days_to_complete: 10
   active: false
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+
+pencil:
+  id: 5
+  name: Pencil
+  days_to_complete: 5
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"

@@ -2,7 +2,8 @@ require 'test_helper'
 
 class CommissionTypesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @commission_type = commission_types(:one)
+    @commission_type = commission_types(:oil)
+    #@commission_type = CommissionType.new(id: 5, active: true, days_to_complete: 7, name: "Oil", created_at: "2017-03-16 14:11:09", updated_at: "2017-03-16 14:11:09")
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class CommissionTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create commission_type" do
     assert_difference('CommissionType.count') do
-      post commission_types_url, params: { commission_type: { active: @commission_type.active, days_to_complete: @commission_type.days_to_complete, name: @commission_type.name } }
+      post commission_types_url, params: { commission_type: { active: true, days_to_complete: 10, name: "Type 1", created_at: "2017-03-31 14:29:09", updated_at: "2017-03-31 14:29:09" } }
     end
 
     assert_redirected_to commission_type_url(CommissionType.last)
@@ -34,7 +35,7 @@ class CommissionTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update commission_type" do
-    patch commission_type_url(@commission_type), params: { commission_type: { active: @commission_type.active, days_to_complete: @commission_type.days_to_complete, name: @commission_type.name } }
+    patch commission_type_url(@commission_type), params: { commission_type: { active: @commission_type.active, days_to_complete: @commission_type.days_to_complete, name: @commission_type.name, created_at: @commission_type.created_at, updated_at: @commission_type.updated_at } }
     assert_redirected_to commission_type_url(@commission_type)
   end
 

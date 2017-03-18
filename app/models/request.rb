@@ -8,10 +8,10 @@
 class Request < ApplicationRecord
   has_one :commission_type
   validates :commission_type_id, :presence => true
-  validates_associated :commission_type
   validates :fullname, :presence => true
   validates :due_date, :presence => true
-  validate :verify_contact_address, :on => :create
+  validate :verify_contact_address, :on => [:create, :update]
+  validate :commission_type_id, :check_commission_type
   
   # Define a custom validator for the contact_address
   def verify_contact_address
@@ -21,5 +21,6 @@ class Request < ApplicationRecord
   end
   # Make sure a valid commission type has been selected
   def check_commission_type
+    errors.add(:commission_type_id, "Invalid commission type") if ! CommissionType.find_by_id(commission_type_id)
   end
 end
