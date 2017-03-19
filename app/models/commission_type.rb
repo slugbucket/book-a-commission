@@ -7,4 +7,6 @@ class CommissionType < ApplicationRecord
   def name_how_long
     "#{name} - #{days_to_complete} days"
   end
+
+  scope :active, lambda { where('active = 1') }
 end
