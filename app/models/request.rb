@@ -8,6 +8,7 @@
 class Request < ApplicationRecord
   has_one :commission_type
   validates :commission_type_id, :presence => true
+  validates :title, :presence => true
   validates :fullname, :presence => true
   validates :due_date, :presence => true
   validate :verify_contact_address, :on => [:create, :update]

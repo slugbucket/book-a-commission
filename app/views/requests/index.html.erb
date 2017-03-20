@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Title</th>
       <th>Fullname</th>
       <th>Contact address</th>
       <th>Commission type</th>
@@ -17,10 +18,11 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
+        <td><%= request.title %></td>
         <td><%= request.fullname %></td>
         <td><%= request.contact_address %></td>
         <td><%= request.commission_type_id %></td>
-        <td><%= request.due_date %></td>
+        <td><%= request.due_date.to_s(:my_date) %></td>
         <td><%= request.comments %></td>
         <td><%= link_to 'Show', request %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>

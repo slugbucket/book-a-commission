@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :title, "Title* (max. 64 characters)" %>
+    <%= f.text_field :title, :class => "required_field", :size => 32 %>
+  </div>
+
+  <div class="field">
     <%= f.label :fullname, "Full name*" %>
     <%= f.text_field :fullname, :class => "required_field" %>
   </div>
@@ -23,7 +28,7 @@
 
   <div class="field">
     <%= f.label :commission_type_id, "Commission type*" %>
-    <%= f.collection_select :commission_type_id, CommissionType.active().order(:name), :id, :name_how_long, {:selected => @request.commission_type_id,:prompt => 'Please select', :class => "required_field"} %><br /
+    <%= f.collection_select :commission_type_id, CommissionType.active().order(:name), :id, :name_how_long, {:selected => @request.commission_type_id,:prompt => 'Please select', :class => "required_field"} %><br />
   </div>
 
   <div class="field">

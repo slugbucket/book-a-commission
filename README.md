@@ -49,7 +49,7 @@ Belongs to :activable, :polymorphic => true
 
 ** ActivityCommission
 This defines the activity profile for a customer commission
- - commission_type - the commission_type
+ - commission_id - a reference to the commission being worked on
  - min_slot_separation - the gap in the schedule between slots
  - number_of_slots - the number of slots required to complete the activity
 
@@ -58,6 +58,7 @@ Has many activites as :activable
 ** ActivityDevelopment
 This defines time spent on personal projects, practise, technique and
 attending courses.
+ - name - the name of the type of development activity
 
 Has many activites as :activable
 
@@ -87,7 +88,7 @@ Has many activites as :activable
 
 ** ActivityTeaching
 This defines the activity for a teaching task,
- - student_id -  a reference to the student being taught
+ - student_name -  the name of the student being taught rather than the id
 
 Has many activites as :activable
 
@@ -97,6 +98,10 @@ This defines the activity for writing an article or blog post
 
 Has many activites as :activable
 
+** Commission
+A customer-requested piece of art to be worked on
+ - request_id - a reference to the customer request
+ - commission_type_id - the commission_type
 
 ** CommissionType
 An item identifying a type of commissioned work,
@@ -122,6 +127,11 @@ based on the type and the number of available commission slots in the schedule.
 
 * TODO
 A reminder of some of the items to include
+
+ - Creating a commission (from a request) creates an ActivityCommission record
+   which can be edited
+ - When creating the commission, by default, the commission type becomes the
+   same as the request type, but can be overridden
 
 Testing
  - A test to make sure inactive commission types are not listed on the

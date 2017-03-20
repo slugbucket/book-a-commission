@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Title:</strong>
+  <%= @request.title %>
+</p>
+
+<p>
   <strong>Fullname:</strong>
   <%= @request.fullname %>
 </p>
@@ -12,12 +17,12 @@
 
 <p>
   <strong>Commission type:</strong>
-  <%= @request.commission_type_id %>
+  <%= CommissionType.find_by_id(@request.commission_type_id).name %>
 </p>
 
 <p>
   <strong>Due date:</strong>
-  <%= @request.due_date %>
+  <%= @request.due_date.to_s(:my_date) %>
 </p>
 
 <p>

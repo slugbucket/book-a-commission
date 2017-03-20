@@ -10,7 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315205600) do
+ActiveRecord::Schema.define(version: 20170320195134) do
+
+  create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title",          limit: 64,    default: "Activity",            null: false
+    t.text     "details",        limit: 65535
+    t.integer  "activable_id",                                                 null: false
+    t.string   "activable_type", limit: 32,    default: "ActivityDevelopment", null: false
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
+  end
+
+  create_table "activity_commissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "commission_id",                              null: false
+    t.string   "name",                limit: 64,             null: false
+    t.integer  "number_of_slots",                default: 1, null: false
+    t.integer  "min_slot_separation"
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
+    t.index ["commission_id"], name: "fk_rails_6696bed57a", using: :btree
+    t.index ["name"], name: "index_activity_commissions_on_name", using: :btree
+  end
+
+  create_table "activity_developments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["name"], name: "index_activity_developments_on_name", using: :btree
+  end
+
+  create_table "activity_holidays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["name"], name: "index_activity_holidays_on_name", using: :btree
+  end
+
+  create_table "activity_others", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["name"], name: "index_activity_others_on_name", using: :btree
+  end
+
+  create_table "activity_paperworks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["name"], name: "index_activity_paperworks_on_name", using: :btree
+  end
+
+  create_table "activity_preparations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["name"], name: "index_activity_preparations_on_name", using: :btree
+  end
+
+  create_table "activity_teachings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "student_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "activity_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                      null: false
@@ -18,6 +79,13 @@ ActiveRecord::Schema.define(version: 20170315205600) do
     t.string   "color",                     null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "activity_writings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       limit: 64, null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["name"], name: "index_activity_writings_on_name", using: :btree
   end
 
   create_table "commission_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -28,6 +96,15 @@ ActiveRecord::Schema.define(version: 20170315205600) do
     t.datetime "updated_at",                                 null: false
   end
 
+  create_table "commissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "request_id",         null: false
+    t.integer  "commission_type_id", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["commission_type_id"], name: "fk_rails_835c1ec22f", using: :btree
+    t.index ["request_id"], name: "fk_rails_77d384b132", using: :btree
+  end
+
   create_table "requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "fullname"
     t.string   "contact_address",    limit: 64,    null: false
@@ -36,6 +113,17 @@ ActiveRecord::Schema.define(version: 20170315205600) do
     t.text     "comments",           limit: 65535
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.string   "title",              limit: 64,    null: false
   end
 
+  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "fullname",   limit: 96,    null: false
+    t.text     "details",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_foreign_key "activity_commissions", "commissions"
+  add_foreign_key "commissions", "commission_types"
+  add_foreign_key "commissions", "requests"
 end
