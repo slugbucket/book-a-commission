@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  request_id: 1
+  commission_type_id: 1
+
+two:
+  id: 2
+  request_id: 2
+  commission_type_id: 1
+
+three:
+  id: 3
+  request_id: 3
+  commission_type_id: 2
+
+four:
+  id: 4
+  request_id: 4
+  commission_type_id: 3

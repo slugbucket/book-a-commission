@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+lazing:
+  id: 1
+  name: Have a break
+
+hanging:
+  id: 2
+  name: Have a nap
+
+snoozing:
+  id: 3
+  name: yawn
+
+schmoozin:
+  id: 4
+  name: Havin a ball

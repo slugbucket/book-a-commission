@@ -1,27 +1,47 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 commissions:
+  id: 1
   name: "Commissions"
   description: "Painting and other customer-commissioned work"
   color: "Blue"
   created_at: "2017-03-18 17:46:19"
   updated_at: "2017-03-18 17:46:19"
 
-prep:
+development:
+  id: 2
+  name: Development
+  description: "Technique and composition"
+  color: "SkyBlue"
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+
+holiday:
+  id: 3
   name: "Preparation"
   description: "Lesson preparation"
   color: "Lilac"
   created_at: "2017-03-18 17:46:19"
   updated_at: "2017-03-18 17:46:19"
 
-admin:
-  name: "Admin"
+preparation:
+  id: 4
+  name: "Preparation"
+  description: "Lesson preparation"
+  color: "Magenta"
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+
+paperwork:
+  id: 5
+  name: Paperwork
   description: "Paperwork, postage, social media and other chores"
   color: "Grey"
   created_at: "2017-03-18 17:46:19"
   updated_at: "2017-03-18 17:46:19"
 
 writing:
+  id: 6
   name: "Writing"
   description: "Documentation, articles and blog posts"
   color: "Salmon"
@@ -29,6 +49,7 @@ writing:
   updated_at: "2017-03-18 17:46:19"
 
 teaching:
+  id: 7
   name: "Teaching"
   description: "Teaching"
   color: "Orange"
@@ -36,6 +57,7 @@ teaching:
   updated_at: "2017-03-18 17:46:19"
 
 other:
+  id: 8
   name: "No description"
   description: "Other stuff"
   color: "LightGreen"

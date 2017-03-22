@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+staycation:
+  id: 1
+  name: Staycation
+
+vacation:
+  id: 2
+  name: Vacation
+
+weekend:
+  id: 3
+  name: weekend break

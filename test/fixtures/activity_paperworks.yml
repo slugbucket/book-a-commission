@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+taxes:
+  id: 1
+  name: Give us yer money
+
+postage:
+  id: 2
+  name: Give us yer parcels
+
+socialmedia:
+  id: 3
+  name: Give us yer soul

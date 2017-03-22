@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+norman:
+  id: 1
+  student_name: Norman
+
+jean:
+  id: 2
+  student_name: Jean
+
+lillian:
+  id: 3
+  student_name: Lillian
+
+michael:
+  id: 4
+  student_name: Michael
