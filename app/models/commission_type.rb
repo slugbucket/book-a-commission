@@ -1,5 +1,6 @@
 class CommissionType < ApplicationRecord
-  #belongs_to :request
+  belongs_to :request
+  belongs_to :commission
   validates :name, :presence => true, :uniqueness => true
   validates :days_to_complete, :presence => true, numericality: { greater_than: 1 }
   validates :active, inclusion: {in: [true, false]}

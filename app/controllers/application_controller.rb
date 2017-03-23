@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordInvalid, with: :show_errors
   rescue_from ActiveRecord::StatementInvalid, with: :db_invalid_stmt
   rescue_from ActiveRecord::RecordNotFound, with: :no_record_errors
-  rescue_from ActionView::Template::Error, with: :template_error
+  #rescue_from ActionView::Template::Error, with: :template_error
   # The next two are known not to work with Rails 3/4
   #rescue_from ActionController::RoutingError, with: :routing_error
   rescue_from AbstractController::ActionNotFound, with: :render_not_found

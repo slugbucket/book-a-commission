@@ -22,6 +22,21 @@ class Request < ApplicationRecord
   end
   # Make sure a valid commission type has been selected
   def check_commission_type
-    errors.add(:commission_type_id, "Invalid commission type") if ! CommissionType.find_by_id(commission_type_id)
+    errors.add(:commission_type_id, "Invalid commission type") if ! self.commission_type.id
+  end
+  # return the request title or none
+  def self.getname(id)
+    begin
+      t = Request.find(id)
+      "#{t.title}"
+    rescue
+      "none"
+    end
+  end
+  def commission_type
+    CommissionType.find(self.commission_type_id)
+  end
+  def self.commission_type_name(comm)
+    "#{CommissionType.getname(comm.id)}"
   end
 end
