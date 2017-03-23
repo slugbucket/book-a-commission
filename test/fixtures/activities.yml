@@ -1,43 +1,57 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   title: The perils of Ruby
   details: "Readline 7? Surely, you're not serious"
   activable_id: 2
   activable_type: ActivityCommission
 
 two:
+  id: 2
   title: PracticePic
   details: Practicing
   activable_id: 2
   activable_type: ActivityDevelopment
 
 three:
+  id: 3
   title: HolidayPic
   details: Holidaying
   activable_id: 2
   activable_type: ActivityHoliday
 
 four:
+  id: 4
   title: OtherPic
   details: Othering
   activable_id: 2
   activable_type: ActivityOther
 
 five:
+  id: 5
   title: PaperworkPic
   details: Paperworking
   activable_id: 2
   activable_type: ActivityPaperwork
 
 six:
+  id: 6
   title: PreparationPic
   details: Preparationing
   activable_id: 2
   activable_type: ActivityPreparation
 
 seven:
+  id: 7
   title: TeachingPic
   details: Teaching
   activable_id: 2
   activable_type: ActivityTeaching
+
+eight:
+  id: 8
+  title: WritingPic
+  details: Writing
+  activable_id: 2
+  activable_type: ActivityWriting

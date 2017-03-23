@@ -54,10 +54,14 @@ class RequestsController < ApplicationController
   # DELETE /requests/1
   # DELETE /requests/1.json
   def destroy
-    @request.destroy
     respond_to do |format|
+    if @request.destroy
       format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
+    else
+        format.html { render :edit, :notice => "Filed to delete request" }
+        format.json { render json: @request.errors, status: :unprocessable_entity }
+      end
     end
   end
 

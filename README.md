@@ -132,7 +132,14 @@ A reminder of some of the items to include
    which can be edited
  - When creating the commission, by default, the commission type becomes the
    same as the request type, but can be overridden
+ - Handle database errors in a more friendly fashion.
 
 Testing
  - A test to make sure inactive commission types are not listed on the
 requests page. 
+ - Update the foreign key violation for requests that redirects to a known page
+   - Can be done by redirectint to 500 page and assert_response
+ - Add a requests test that removes a commission before the request
+ - Add a commission_types test that removes both the Commission and Request
+ - Understand why updating a request is expecting to an ActionDispatch object
+   rather than the @request the way that all the other patch requests do.

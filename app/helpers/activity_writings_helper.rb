@@ -1,0 +1,2 @@
+module ActivityWritingsHelper
+end

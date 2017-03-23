@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<p id="#notice"><%= notice %></p>
+<% if alert -%>
+<div id="#error_explanation" style="color: #ff0000">
+<h2>An error occurred</h2>
+<ul>
+<li><%= alert %></li>
+</ul>
+</div>
+<% end -%>
 
 <h1>Requests</h1>
 
