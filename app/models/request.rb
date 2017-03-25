@@ -22,9 +22,13 @@ class Request < ApplicationRecord
       errors.add(:contact_address,  "is not an email address")
     end
   end
-  # Make sure a valid commission type has been selected
+  # Make sure a (valid) commission type has been selected
   def check_commission_type
-    errors.add(:commission_type_id, "Invalid commission type") if ! CommissionType.find(commission_type_id)
+    if ! commission_type_id then
+      errors.add(:commission_type_id, "Missing commission type")
+      return
+    end
+    errors.add(:commission_type_id, "Invalid commission type") if commission_type_id && ! CommissionType.find(commission_type_id)
   end
   # return the request title or none
   def self.getname(id)

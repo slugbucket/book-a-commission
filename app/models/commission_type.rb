@@ -5,7 +5,7 @@ class CommissionType < ApplicationRecord
   validates :days_to_complete, :presence => true, numericality: { greater_than: 1 }
   validates :active, inclusion: {in: [true, false]}
 
-  def self.getname
+  def self.getname(id)
     begin
        n = CommissionType.find(id).name
     rescue ActiveRecord::RecordNotFound => e

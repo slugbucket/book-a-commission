@@ -17,8 +17,8 @@ class ActivitiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create activity" do
     assert_difference('Activity.count') do
-      #post activities_url, params: { activity: { activable_id: @activity.activable_id, activable_type: @activity.activable_type, details: @activity.details, title: @activity.title } }
-      post activities_url, params: { activity: { id: 1, activable_id: @activity.activable_id, activable_type: @activity.activable_type, details: "BarFoo activity", title: "In a world where there's only foo" } }
+      #post activities_url, params: { activity: { activityable_id: @activity.activityable_id, activityable_type: @activity.activityable_type, details: @activity.details, title: @activity.title } }
+      post activities_url, params: { activity: { id: 1, activityable_id: @activity.activityable_id, activityable_type: @activity.activityable_type, details: "BarFoo activity", title: "In a world where there's only foo" } }
     end
 
     assert_redirected_to activity_url(Activity.last)
@@ -35,7 +35,7 @@ class ActivitiesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update activity" do
-    patch activity_url(@activity), params: { activity: { activable_id: @activity.activable_id, activable_type: @activity.activable_type, details: @activity.details, title: @activity.title } }
+    patch activity_url(@activity), params: { activity: { activityable_id: @activity.activityable_id, activityable_type: @activity.activityable_type, details: @activity.details, title: @activity.title } }
     assert_redirected_to activity_url(@activity)
   end
 
