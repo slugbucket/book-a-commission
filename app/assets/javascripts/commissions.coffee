@@ -11,7 +11,7 @@
 $ ->
   $("#commission_request_id").change ->
     req = $("#commission_request_id option:selected").val()
-    ct = $.ajax
+    $.ajax
            url: "/requests/"+req+".json"
            data: $('#commission_commission_type_id').val()
            success: (data, status, response) ->

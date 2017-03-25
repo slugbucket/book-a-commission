@@ -28,7 +28,7 @@
         <td><%= request.title %></td>
         <td><%= request.fullname %></td>
         <td><%= request.contact_address %></td>
-        <td><%= request.commission_type.name %></td>
+        <td><%= request.commission_type_name %></td>
         <td><%= request.due_date.to_s(:my_date) %></td>
         <td><%= link_to 'Show', request %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>

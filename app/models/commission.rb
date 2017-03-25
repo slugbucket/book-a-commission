@@ -13,13 +13,10 @@ class Commission < ApplicationRecord
   def self.request_name(comm)
     "#{Request.getname(comm.id)}"
   end
-  def request
-    Request.find(self.request_id)
-  end
-  def commission_type
-    CommissionType.find(self.commission_type_id)
-  end
   def self.commission_type_name(comm)
-    "#{CommissionType.getname(comm.id)}"
+    "#{CommissionType.getname(comm.commissio_type_id)}"
+  end
+  def self.request_due_date(comm)
+    "#{Request.getduedate(comm.request_id)}"
   end
 end

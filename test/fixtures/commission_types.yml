@@ -38,3 +38,17 @@ pencil:
   days_to_complete: 5
   created_at: "2017-03-18 17:46:19"
   updated_at: "2017-03-18 17:46:19"
+
+unconnected:
+  id: 101
+  name: freeform
+  days_to_complete: 12
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"
+
+deleteme:
+  id: 444
+  name: deletable media
+  days_to_complete: 444
+  created_at: "2017-03-18 17:46:19"
+  updated_at: "2017-03-18 17:46:19"

@@ -1,10 +1,18 @@
 class CommissionType < ApplicationRecord
-  belongs_to :request
-  belongs_to :commission
+  has_many :requests, :dependent => :destroy
+  has_many :commissions, :dependent => :destroy
   validates :name, :presence => true, :uniqueness => true
   validates :days_to_complete, :presence => true, numericality: { greater_than: 1 }
   validates :active, inclusion: {in: [true, false]}
 
+  def self.getname
+    begin
+       n = CommissionType.find(id).name
+    rescue ActiveRecord::RecordNotFound => e
+      n = "None"
+    end
+    "#{n}"
+  end
   def name_how_long
     "#{name} - #{days_to_complete} days"
   end

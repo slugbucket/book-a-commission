@@ -7,7 +7,9 @@
 #end
 class Request < ApplicationRecord
   has_one :commission_type
-  validates :commission_type_id, :presence => true
+  # This is needed but breaks requests and commissions
+  #has_one :commission, :dependent => destroy
+
   validates :title, :presence => true
   validates :fullname, :presence => true
   validates :due_date, :presence => true
@@ -22,7 +24,7 @@ class Request < ApplicationRecord
   end
   # Make sure a valid commission type has been selected
   def check_commission_type
-    errors.add(:commission_type_id, "Invalid commission type") if ! self.commission_type.id
+    errors.add(:commission_type_id, "Invalid commission type") if ! CommissionType.find(commission_type_id)
   end
   # return the request title or none
   def self.getname(id)
@@ -33,8 +35,20 @@ class Request < ApplicationRecord
       "none"
     end
   end
-  def commission_type
-    CommissionType.find(self.commission_type_id)
+  def self.getduedate(id)
+    begin
+      t = Request.find(id)
+      "#{t.due_date}"
+    rescue
+      "none"
+    end
+  end
+  def commission_type_name
+    begin
+      CommissionType.find(self.commission_type_id).name
+    rescue ActiveRecord::RecordNotFound => e
+      "Missing"
+    end
   end
   def self.commission_type_name(comm)
     "#{CommissionType.getname(comm.id)}"
