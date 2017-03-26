@@ -1,0 +1,32 @@
+<%= form_for(activity_commission) do |f| %>
+  <% if activity_commission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activity_commission.errors.count, "error") %> prohibited this activity_commission from being saved:</h2>
+
+      <ul>
+      <% activity_commission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :commission_id %>
+    <%= f.collection_select :commission_id, Commission.order(:created_at), :id, :title, {:selected => @activity_commission.commission_id, :prompt => 'Please select', :class => "required_field"} %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :number_of_slots %>
+    <%= f.number_field :number_of_slots %>
+  </div>
+
+  <div class="field">
+    <%= f.label :min_slot_separation %>
+    <%= f.number_field :min_slot_separation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

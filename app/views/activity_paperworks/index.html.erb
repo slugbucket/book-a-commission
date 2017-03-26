@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activity Paperworks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activity_paperworks.each do |activity_paperwork| %>
+      <tr>
+        <td><%= activity_paperwork.name %></td>
+        <td><%= link_to 'Show', activity_paperwork %></td>
+        <td><%= link_to 'Edit', edit_activity_paperwork_path(activity_paperwork) %></td>
+        <td><%= link_to 'Destroy', activity_paperwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity Paperwork', new_activity_paperwork_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Commission:</strong>
+  <%= @activity_commission.commission_id %>
+</p>
+
+<p>
+  <strong>Number of slots:</strong>
+  <%= @activity_commission.number_of_slots %>
+</p>
+
+<p>
+  <strong>Min slot separation:</strong>
+  <%= @activity_commission.min_slot_separation %>
+</p>
+
+<%= link_to 'Edit', edit_activity_commission_path(@activity_commission) %> |
+<%= link_to 'Back', activity_commissions_path %>

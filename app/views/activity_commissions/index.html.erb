@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activity Commissions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Commission</th>
+      <th>Number of slots</th>
+      <th>Min slot separation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activity_commissions.each do |activity_commission| %>
+      <tr>
+        <td><%= activity_commission.commission_id %></td>
+        <td><%= activity_commission.number_of_slots %></td>
+        <td><%= activity_commission.min_slot_separation %></td>
+        <td><%= link_to 'Show', activity_commission %></td>
+        <td><%= link_to 'Edit', edit_activity_commission_path(activity_commission) %></td>
+        <td><%= link_to 'Destroy', activity_commission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity Commission', new_activity_commission_path %>

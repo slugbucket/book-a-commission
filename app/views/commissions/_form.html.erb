@@ -1,0 +1,29 @@
+<%= form_for(commission) do |f| %>
+  <% if commission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(commission.errors.count, "error") %> prohibited this commission from being saved:</h2>
+
+      <ul>
+      <% commission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :request_id %>
+    <%= f.collection_select :request_id, Request.order(:created_at), :id, :title, {:selected => @commission.request_id,:prompt => 'Please select', :class => "required_field"} %><br />
+    <!-- %= f.number_field :request_id % -->
+  </div>
+
+  <div class="field">
+    <%= f.label :commission_type_id %>
+    <!-- %= f.number_field :commission_type_id % -->
+    <%= f.collection_select :commission_type_id, CommissionType.active().order(:name), :id, :name_how_long, {:selected => @commission.commission_type_id,:prompt => 'Please select', :class => "required_field"} %><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

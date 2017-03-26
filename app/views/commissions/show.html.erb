@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= Request.getname(@commission.request_id) %>
+</p>
+
+<p>
+  <strong>Commission type:</strong>
+  <%= CommissionType.getname(@commission.commission_type_id) %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= Request.find_by_id(@commission.request_id).due_date.to_s(:my_date) %>
+</p>
+
+<%= link_to 'Edit', edit_commission_path(@commission) %> |
+<%= link_to 'Back', commissions_path %>
