@@ -1,6 +1,8 @@
 class Commission < ApplicationRecord
-  has_one :request
-  has_one :commission_type
+  # According to http://guides.rubyonrails.org/association_basics.html#choosing-between-belongs-to-and-has-oneVhttp://guides.rubyonrails.org/association_basics.html#choosing-between-belongs-to-and-has-one
+  # the belongs_to goes with the table with the foreign key
+  belongs_to :request
+  belongs_to :commission_type
 
   validates :request_id, :presence => true
   validates :commission_type_id, :presence => true

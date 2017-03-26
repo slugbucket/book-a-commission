@@ -1,6 +1,6 @@
 class CommissionType < ApplicationRecord
-  has_many :requests, :dependent => :destroy
-  has_many :commissions, :dependent => :destroy
+  has_one :request, :dependent => :destroy
+  has_one :commission, :dependent => :destroy
   validates :name, :presence => true, :uniqueness => true
   validates :days_to_complete, :presence => true, numericality: { greater_than: 1 }
   validates :active, inclusion: {in: [true, false]}
