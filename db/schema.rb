@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325203958) do
+ActiveRecord::Schema.define(version: 20170326210907) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "title",             limit: 64,    default: "Activity",            null: false
-    t.text     "details",           limit: 65535
-    t.integer  "activityable_id",                                                 null: false
-    t.string   "activityable_type", limit: 32,    default: "ActivityDevelopment", null: false
-    t.datetime "created_at",                                                      null: false
-    t.datetime "updated_at",                                                      null: false
+    t.string   "title",               limit: 64,    default: "Activity",            null: false
+    t.text     "details",             limit: 65535
+    t.integer  "activityable_id",                                                   null: false
+    t.string   "activityable_type",   limit: 32,    default: "ActivityDevelopment", null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
+    t.integer  "number_of_slots",                   default: 1,                     null: false
+    t.integer  "min_slot_separation",               default: 1,                     null: false
   end
 
   create_table "activity_commissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -8,7 +8,7 @@
 class Request < ApplicationRecord
   belongs_to :commission_type
   # This is needed but breaks requests and commissions
-  has_one :commission, :dependent => destroy
+  has_one :commission, :dependent => :destroy
 
   validates :title, :presence => true
   validates :fullname, :presence => true

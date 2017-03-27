@@ -3,11 +3,11 @@ class Commission < ApplicationRecord
   # the belongs_to goes with the table with the foreign key
   belongs_to :request
   belongs_to :commission_type
+  has_many :activities, :as => :activityable, :dependent => :destroy
 
   validates :request_id, :presence => true
   validates :commission_type_id, :presence => true
 
-   
   def title
     "#{Request.getname(self.request_id)}"
   end
