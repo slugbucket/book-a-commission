@@ -60,7 +60,7 @@ class CommissionTypesControllerTest < ActionDispatch::IntegrationTest
   test "should not destroy commission_type when Commission is linked" do
     @connected_ct = commission_types(:deleteme)
     delete commission_type_url(@connected_ct)
-    assert_response 500
+    assert_response 302
 
   end
 end

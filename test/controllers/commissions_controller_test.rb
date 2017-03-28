@@ -42,7 +42,7 @@ class CommissionsControllerTest < ActionDispatch::IntegrationTest
   # Test will fail if there is a foreign key reference from ActivityCommission
   test "should not destroy commission when ActivityCommission is linked" do
     delete commission_url(@commission)
-    assert_response 500
+    assert_response 302
     #end
 
     #assert_redirected_to commissions_url
